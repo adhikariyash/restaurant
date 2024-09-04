@@ -1,34 +1,34 @@
-// data.js
+
 
 const products = [
-  // Salad
+
   {
     id: 1,
     name: 'Caesar Salad',
     price: 7.99,
     category: 'Salad',
-    image: '/public/ceasarsalad.jpg'
+    image: ' /ceasarsalad.jpg'
   },
   {
     id: 2,
     name: 'Greek Salad',
     price: 8.49,
     category: 'Salad',
-    image: '/public/greeksalad.jpg'
+    image: ' /greeksalad.jpg'
   },
   {
     id: 3,
     name: 'Garden Salad',
     price: 6.99,
     category: 'Salad',
-    image: '/public/gardensalad.jpg'
+    image: ' /gardensalad.jpg'
   },
   {
     id: 4,
     name: 'Spinach Salad',
     price: 7.49,
     category: 'Salad',
-    image: '/public/spinachsalad.jpg'
+    image: ' /spinachsalad.jpg'
   },
 
   // Rolls
@@ -37,28 +37,28 @@ const products = [
     name: 'Vegetable Spring Rolls',
     price: 5.49,
     category: 'Rolls',
-    image: '/public/vegetablespringrolls.jpg'
+    image: ' /vegetablespringrolls.jpg'
   },
   {
     id: 6,
     name: 'Chicken Teriyaki Rolls',
     price: 6.99,
     category: 'Rolls',
-    image: '/public/chickenteriyakirolls.jpg'
+    image: ' /chickenteriyakirolls.jpg'
   },
   {
     id: 7,
     name: 'Sushi Rolls',
     price: 8.49,
     category: 'Rolls',
-    image: '/public/shushirolls.jpg'
+    image: ' /shushirolls.jpg'
   },
   {
     id: 8,
     name: 'Spicy Tuna Rolls',
     price: 7.99,
     category: 'Rolls',
-    image: '/public/spicytunarolls.jpg'
+    image: '/spicytunarolls.jpg'
   },
 
   // Dessert
@@ -67,28 +67,28 @@ const products = [
     name: 'Chocolate Lava Cake',
     price: 6.99,
     category: 'Dessert',
-    image: '/public/chocolatelavacake.jpg'
+    image: '/chocolatelavacake.jpg'
   },
   {
     id: 10,
     name: 'Cheesecake',
     price: 7.49,
     category: 'Dessert',
-    image: '/public/cheesecake.jpg'
+    image: '/cheesecake.jpg'
   },
   {
     id: 11,
     name: 'Apple Pie',
     price: 5.99,
     category: 'Dessert',
-    image: '/public/applepie.jpg'
+    image: '/applepie.jpg'
   },
   {
     id: 12,
     name: 'Tiramisu',
     price: 6.49,
     category: 'Dessert',
-    image: '/public/tiramisu.jpg'
+    image: '/tiramisu.jpg'
   },
 
   // Sandwich
@@ -97,28 +97,28 @@ const products = [
     name: 'Club Sandwich',
     price: 8.49,
     category: 'Sandwich',
-    image: '/public/clubsandwich.jpg'
+    image: '/clubsandwich.jpg'
   },
   {
     id: 14,
     name: 'Grilled Cheese Sandwich',
     price: 6.99,
     category: 'Sandwich',
-    image: '/public/grilledcheesesandwich.jpg'
+    image: '/grilledcheesesandwich.jpg'
   },
   {
     id: 15,
     name: 'Turkey Sandwich',
     price: 7.49,
     category: 'Sandwich',
-    image: '/public/turkeysandwich.jpg'
+    image: '/turkeysandwich.jpg'
   },
   {
     id: 16,
     name: 'BLT Sandwich',
     price: 7.99,
     category: 'Sandwich',
-    image: '/public/bltsandwich.jpg'
+    image: ' /bltsandwich.jpg'
   },
 
   // Cake
@@ -127,28 +127,28 @@ const products = [
     name: 'Red Velvet Cake',
     price: 9.99,
     category: 'Cake',
-    image: '/public/redvelvetcake.jpeg'
+    image: ' /redvelvetcake.jpeg'
   },
   {
     id: 18,
     name: 'Chocolate Cake',
     price: 8.99,
     category: 'Cake',
-    image: '/public/chocolatecake.jpeg'
+    image: '/chocolatecake.jpeg'
   },
   {
     id: 19,
     name: 'Carrot Cake',
     price: 9.49,
     category: 'Cake',
-    image: '/public/carrotcake.jpg'
+    image: '/carrotcake.jpg'
   },
   {
     id: 20,
     name: 'Lemon Cake',
     price: 8.49,
     category: 'Cake',
-    image: '/public/lemoncake.jpeg'
+    image: '/lemoncake.jpeg'
   },
 
   // Pure Veg
@@ -157,28 +157,28 @@ const products = [
     name: 'Veggie Stir Fry',
     price: 10.49,
     category: 'Pure Veg',
-    image: '/public/veggiestirfry.jpg'
+    image: '/veggiestirfry.jpg'
   },
   {
     id: 22,
     name: 'Vegetable Curry',
     price: 9.99,
     category: 'Pure Veg',
-    image: '/public/vegetablecurry.jpg'
+    image: '/vegetablecurry.jpg'
   },
   {
     id: 23,
     name: 'Stuffed Bell Peppers',
     price: 11.49,
     category: 'Pure Veg',
-    image: '/public/stuffedbellpapers.jpeg'
+    image: '/stuffedbellpapers.jpeg'
   },
   {
     id: 24,
     name: 'Chickpea Salad',
     price: 8.99,
     category: 'Pure Veg',
-    image: '/public/chickpeasalad.jpg'
+    image: '/chickpeasalad.jpg'
   },
 
   // Pasta
@@ -187,28 +187,28 @@ const products = [
     name: 'Spaghetti Carbonara',
     price: 11.99,
     category: 'Pasta',
-    image: '/public/spaghetticarbonara.jpg'
+    image: ' /spaghetticarbonara.jpg'
   },
   {
     id: 26,
     name: 'Fettuccine Alfredo',
     price: 12.49,
     category: 'Pasta',
-    image: '/public/fettuccinealfredo.jpeg'
+    image: ' /fettuccinealfredo.jpeg'
   },
   {
     id: 27,
     name: 'Penne Arrabbiata',
     price: 10.99,
     category: 'Pasta',
-    image: '/public/pennearrabbiata.jpg'
+    image: '/pennearrabbiata.jpg'
   },
   {
     id: 28,
     name: 'Lasagna',
     price: 13.49,
     category: 'Pasta',
-    image: '/public/lasagna.jpg'
+    image: '/lasagna.jpg'
   },
 
  
@@ -216,4 +216,4 @@ const products = [
 
 export default products;
 
- export const categories = [...new Set(products.map(item => item.category))]
+ export const categories = [...new Set(products.map(item => item.category))];
