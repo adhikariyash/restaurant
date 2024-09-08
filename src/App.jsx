@@ -1,16 +1,31 @@
-import { useState, useEffect } from "react";
-import LoadingScreen from "./components/loadingScreen.jsx";
-import Router from "./components/Router";
+import React, { useState, useEffect } from 'react';
+import RouterConfig from './components/RouterConfig';
+import LoadingScreen from './components/loadingScreen';
 
 function App() {
-  const [loading, setLoading] = useState(true);
+  const [showLoading, setShowLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 6700);
+    
+    const timer = setTimeout(() => {
+      setShowLoading(false);
+    }, 4000); 
+
+ 
     return () => clearTimeout(timer);
   }, []);
 
-  return <>{loading ? <LoadingScreen /> : <Router />}</>;
+  return (
+    <>
+      <div style={{ display: showLoading ? 'block' : 'none' }}>
+        <LoadingScreen />
+      </div>
+
+      <div style={{ display: showLoading ? 'none' : 'block' }}>
+        <RouterConfig />
+      </div>
+    </>
+  );
 }
 
 export default App;

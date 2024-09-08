@@ -1,11 +1,11 @@
 import React from 'react'
 
-function contact() {
+function AppDownload() {
   return (
     <div>
-      hehe
+      geg
     </div>
   )
 }
 
-export default contact
+export default AppDownload

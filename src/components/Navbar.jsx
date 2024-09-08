@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -51,48 +52,48 @@ const Navbar = () => {
       }`}
     >
       <nav className="container mx-auto flex justify-between items-center py-2 px-4 md:px-8">
-        <a href="#home" className="flex items-center">
+        <Link to="/" className="flex items-center">
           <img
             src="/xrestro.png"
             alt="XRestro Logo"
             className="h-16 md:h-20 rounded-full w-16 md:w-20 object-cover mr-3"
           />
           <span className="text-xl md:text-2xl font-bold text-orange-400">XRestro</span>
-        </a>
+        </Link>
 
         {/* Navigation Links for Desktop */}
         <ul className="hidden md:flex font-medium text-lg md:text-xl space-x-7">
           <li>
-            <a
-              href="#home"
+            <Link
+              to="/"
               className="text-gray-600 hover:text-black hover:border-l-4 hover:border-orange-500 border-l-4 rounded-full p-1 transition"
             >
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#menu"
+            <Link
+              to="/menu"
               className="text-gray-600 hover:text-black hover:border-l-4 hover:border-orange-500 p-1 rounded-full border-l-4 transition"
             >
               Menu
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#contacts"
+            <Link
+              to="/contacts"
               className="text-gray-600 hover:text-black hover:border-l-4 hover:border-orange-500 p-1 border-l-4 rounded-full transition"
             >
               Contacts
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#mobile-app"
+            <Link
+              to="/mobile-app"
               className="text-gray-600 hover:text-black hover:border-l-4 hover:border-orange-500 p-1 rounded-full border-l-4 transition"
             >
               Mobile App
-            </a>
+            </Link>
           </li>
         </ul>
 
@@ -150,40 +151,40 @@ const Navbar = () => {
         </div>
         <ul className="flex flex-col items-center justify-center space-y-6 font-medium text-lg md:text-xl p-4">
           <li>
-            <a
-              href="#home"
+            <Link
+              to="/"
               className="text-gray-600 hover:text-gray-800 transition"
               onClick={closeMobileMenu}
             >
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#menu"
+            <Link
+              to="/menu"
               className="text-gray-600 hover:text-gray-800 transition"
               onClick={closeMobileMenu}
             >
               Menu
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#contacts"
+            <Link
+              to="/contacts"
               className="text-gray-600 hover:text-gray-800 transition"
               onClick={closeMobileMenu}
             >
               Contacts
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#mobile-app"
+            <Link
+              to="/mobile-app"
               className="text-gray-600 hover:text-gray-800 transition"
               onClick={closeMobileMenu}
             >
               Mobile App
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
