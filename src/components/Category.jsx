@@ -21,7 +21,7 @@ function Category({ category, setcategory }) {
       setcategory(prev => (prev === cate) ? "All" : cate);
       setIsPopupOpen(false);
       setIsLoading(false); 
-    }, 1000); 
+    }, 500); 
     setTimeoutId(id);
   };
 
