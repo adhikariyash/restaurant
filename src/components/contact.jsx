@@ -1,11 +1,11 @@
 import React from 'react'
 
-function contact() {
+function Contact() {
   return (
-    <div>
-      hehe
+    <div className='mt-32 h-screen items-center flex justify-center font-bold'>
+     Contact section comming soon
     </div>
   )
 }
 
-export default contact
+export default Contact

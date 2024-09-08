@@ -5,7 +5,7 @@ import Menu from './Menu';
 import Home from './Home';
 import AppDownload from './AppDownload';
 import Navbar from './Navbar';
-
+import Contact from './contact';
 function RouterConfig() {
   const [category, setcategory] = useState("All") 
   return (
@@ -17,7 +17,7 @@ function RouterConfig() {
           <Route path='/' element={<Home category={category} setcategory={setcategory} />}  />
           <Route path='/products/:id' element={<ProductDetails />} />
           <Route path='/menu' element={<Menu category={category} setcategory={setcategory} />} />
-          <Route path='/contact' element={<Contact />} />
+          <Route path ='/contacts' element = {<Contact />}/>
           <Route path='/download' element={<AppDownload />} />
         </Routes>
 

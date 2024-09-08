@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Header from './Header'
 import Category from './Category'
 import Categoryitems from './CategoryItems' 
+import Contact from './contact'
 
 function Home({category, setcategory}) {
  
@@ -20,6 +21,7 @@ function Home({category, setcategory}) {
           <Categoryitems category={category}/>
         </div>
         </div>
+        <div><Contact /></div>
     
       
         
