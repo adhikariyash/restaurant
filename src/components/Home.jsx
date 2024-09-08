@@ -15,7 +15,8 @@ function Home({category, setcategory}) {
         <div className='px-10'>
           <Category setcategory={setcategory} category={category}/>
         </div>
-       <div className='flex  gap-10 justify-center items-center'> <div className=' gap-x-5'>
+       <div className='flex justify-center items-center px-10'>
+         <div className=''>
           <Categoryitems category={category}/>
         </div>
         </div>

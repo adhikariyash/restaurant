@@ -28,7 +28,7 @@ function Category({ category, setcategory }) {
   return (
     <section id='menu' className="relative mb-9 border-b-2 py-2 overflow-hidden">
       <div>
-        <p className='font-medium border-l-2 border-r-2 px-1 border-orange-400 text-sm shadow-lg text-center mb-10 p-2 lg:text-2xl '>
+        <p className='border-l-2 border-r-2 px-1 border-orange-400 text-sm shadow-lg text-center mb-10 p-2 lg:text-2xl font-bold '>
           Choose from the wide variety of dishes
         </p>
       </div>
@@ -43,7 +43,7 @@ function Category({ category, setcategory }) {
           </button>
 
           {isPopupOpen && (
-            <div className="fixed top-0 right-0 bg-white border border-gray-300 shadow-black p-2 rounded-md mt-2  w-44 font-bold transform text-sm transition-transform duration-300 ease-in-out shadow-lg border-b-4 "
+            <div className="fixed top-0 right-0 bg-white border border-gray-300 shadow-black p-2 rounded-md mt-2  w-44 font-bold transform text-sm text-center  transition-transform duration-300 ease-in-out shadow-lg border-b-4 "
                  style={{ transform: isPopupOpen ? 'translateX(10%) translateY(45%)' : 'translateX(50%) ' }}>
               <ul className="flex flex-col gap-2 p-4">
                 {categories.map((cate, index) => (
@@ -62,12 +62,12 @@ function Category({ category, setcategory }) {
         </div>
       </div>
 
-      <div className="hidden md:grid md:grid-cols-7  md:justify-center rounded-lg list-none md:grid- lg:gap-5   xl:gap-24  ">
+      <div className="hidden md:grid md:grid-cols-7  md:justify-center rounded-lg list-none md:grid- lg:gap-5   xl:gap-24 text-center  ">
         {categories.map((cate, index) => (
           <div className='flex justify-center items-center font-bold text-sm  border-black  px-2'>
             <li
               key={index}
-              className={`cursor-pointer ${category === cate ? "rounded-full font-bold text-orange-500 bg-black shadow-xl shadow-black text-xl  p-4" : 'bg-white px-4 rounded-full bordeer-b-4 py-1 md:text-sm lg:text-lg'}`}
+              className={`cursor-pointer ${category === cate ? "rounded-full font-bold text-orange-500 bg-black shadow-xl shadow-black text-lg  p-4" : 'bg-white px-4 rounded-full bordeer-b-4 py-1 md:text-sm lg:text-lg'}`}
               onClick={() =>
                 handleCategoryClick(cate)
               }

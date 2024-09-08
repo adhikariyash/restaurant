@@ -4,7 +4,8 @@ import products from '../data';
 
 function Categoryitems({ category }) {
   return (
-    <div className='grid lg:grid-cols-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 place-items-center gap-x-8  gap-y-10 mb-10 mt-10'>
+    <div className='flex justify-center  items-center'>
+      <div className='grid lg:grid-cols-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 place-items-center gap-y-10 gap-x-5 mb-10 mt-10'>
       {products
         .filter(item => category === item.category || category === 'All')
         .map(item => (
@@ -35,6 +36,7 @@ function Categoryitems({ category }) {
           </div>
           </Link>
         ))}
+    </div>
     </div>
   );
 }
