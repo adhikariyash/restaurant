@@ -7,6 +7,9 @@ import AppDownload from './AppDownload';
 import Navbar from './Navbar';
 import Contact from './contact';
 import Order from './Order';
+import Checkout from './Checkout';
+import Payment from './Payment';
+
 function RouterConfig() {
   const [category, setcategory] = useState("All") 
   return (
@@ -22,7 +25,9 @@ function RouterConfig() {
           <Route path='/menu' element={<Menu category={category} setcategory={setcategory} />} />
           <Route path ='/contacts' element = {<Contact />}/>
           <Route path='/mobile-app' element={<AppDownload />} />
-          <Route path ="/orders" element={<Order/>}/>
+          <Route path ="/orders/:id" element={<Order/>}/>
+          <Route path = "/checkout" element={<Checkout/>}/>
+          <Route path ="/payment" element={<Payment/>}/>
         </Routes>
 
        

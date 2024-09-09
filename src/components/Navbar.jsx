@@ -26,7 +26,7 @@ const Navbar = () => {
 
   return (
     <header
-      className={`bg-white shadow-md relative top-0 left-0 right-0 z-50 transition-transform duration-300 ${
+      className={`bg-white shadow-md relative top-0 left-0 right-0 overflow-x-hidden z-50 transition-transform duration-300 ${
         showNavbar ? 'transform translate-y-0' : 'transform -translate-y-full'
       }`}
     >
