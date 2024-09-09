@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showNavbar, setShowNavbar] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
 
   // Toggle mobile menu state
   const toggleMobileMenu = () => {
@@ -18,36 +17,16 @@ const Navbar = () => {
 
   // Prevent scroll when mobile menu is open
   useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : '';
   }, [isMobileMenuOpen]);
 
-  // Handle showing/hiding navbar on scroll
-  const handleScroll = () => {
-    if (window.scrollY > lastScrollY) {
-      // Scroll down
-      setShowNavbar(false);
-    } else {
-      // Scroll up
-      setShowNavbar(true);
-    }
-    setLastScrollY(window.scrollY);
-  };
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [lastScrollY]);
+
 
   return (
     <header
-      className={`bg-white shadow-md fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ${
+      className={`bg-white shadow-md relative top-0 left-0 right-0 z-50 transition-transform duration-300 ${
         showNavbar ? 'transform translate-y-0' : 'transform -translate-y-full'
       }`}
     >

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import products from '../data'; 
 
 function ProductDetails() {
@@ -7,37 +7,38 @@ function ProductDetails() {
   const productId = parseInt(id);
   const product = products.find(item => item.id === productId);
 
-  useEffect(() => {
-    document.body.style.overflow = 'hidden';
-
-    return () => {
-      document.body.style.overflow = 'auto';
-    };
-  }, []);
-
+ 
   if (!product) {
     return <div>Product not found!</div>;
   }
 
   return (
-    <section className='flex flex-col items-center h-screen justify-center'>
-      <div>
-        <title>{product.name} - Product Details</title>
-
-        <h1 className='text-3xl font-bold mb-4'>{product.name}</h1>
-        <img 
+    <section className='flex p-5  flex-col items-centern mt-0 h-screen justify-center'>
+      <div className='flex flex-col justify-center border-2 p-5 items-center'>
+        <div className='flex justify-center rounded shadow-lg  items-center   border-b-2 border-black mb-4 bg-orange-300 w-full  px-4 p-1'>
+        <h1 className='text-3xl text-center font-bold'> {product.name}</h1>
+        </div>
+       <div className='border-4 p-5 rounded-xl border-black shadow-lg shadow-black mb-4'>
+       <img 
           src={product.image} 
           alt={product.name} 
           className='w-60 h-60 rounded-full shadow-lg mb-6'
         />
+       </div>
     
-        <p className='text-lg mb-4'>Category: {product.category}</p>
-        <p>
+       <div className=' border-t-4 font-bold flex w-full justify-between px-5'>
+       <p className='text-lg mb-4 font-bold'>Category: {product.category}</p>
+       <p className='text-lg mb-4'>Price: ${product.price}</p>
+       
+       </div>
+       <div className='flex flex-col justify-start text-start items-center w-full px-5'>
+       <p className='font-medium'>
           {product.description }
-        </p>
-        <p className='text-lg mb-4'>Price: ${product.price}</p>
-      <div>
-        <ul>
+        </p> 
+      <div className='text-start w-full mt-2'>
+      <p className='font-bold'>Key Ingredientes:</p>
+        <ul className='flex  sm:gap-6  text-xs gap-4 mt-2 mb-3  w-full items-start justify-start text-start font-bold'>
+          
           <li>
             {product.ingredients[0]}
           </li>
@@ -49,6 +50,10 @@ function ProductDetails() {
           </li>
         </ul>
       </div>
+       </div>
+       <div className=' text-end  w-full flex justify-end'>
+        <Link to ="/orders"><button className='bg-orange-400 p-3 rounded-xl font-bold shadow-sm shadow-black' onClick={()=>{console.log("Hey hey")}}>Order Now!</button></Link>
+       </div>
       </div>
     </section>
   );
