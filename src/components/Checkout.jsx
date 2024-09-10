@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useCheckout } from './cartProvider';
 import { Link } from 'react-router-dom';
+
 function Checkout() {
   const { handleCheckout } = useCheckout();
 
   const [formData, setFormData] = useState({
     fullName: '',
     phoneNumber: '',
-    email: '',
     location: {
       country: '',
       state: '',
@@ -15,6 +15,8 @@ function Checkout() {
     },
   });
   const [errors, setErrors] = useState({});
+  const [isAddressAdded, setIsAddressAdded] = useState(false);
+  const [showPopup, setShowPopup] = useState(false); // For popup visibility
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -38,32 +40,36 @@ function Checkout() {
     const newErrors = {};
     if (!formData.fullName) newErrors.fullName = 'Full Name is required';
     if (!formData.phoneNumber) newErrors.phoneNumber = 'Phone Number is required';
-    if (!formData.email) {
-      newErrors.email = 'Email is required';
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = 'Email is invalid';
-    }
+
     const { country, state, houseNo } = formData.location;
     if (!country) newErrors['location.country'] = 'Country is required';
     if (!state) newErrors['location.state'] = 'State is required';
     if (!houseNo) newErrors['location.houseNo'] = 'House Number is required';
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleAddAddress = (e) => {
     e.preventDefault();
     if (validate()) {
-      handleCheckout(formData); // Store checkout data in context
-      alert('Form submitted successfully');
-      // Redirect or handle next steps
+      setIsAddressAdded(true);
+      setShowPopup(true); // Show popup
     }
   };
+
+  // Hide the popup after 3 seconds
+  useEffect(() => {
+    if (showPopup) {
+      const timer = setTimeout(() => setShowPopup(false), 3000);
+      return () => clearTimeout(timer); // Cleanup the timer
+    }
+  }, [showPopup]);
 
   return (
     <div className="p-5 max-w-md mx-auto bg-white shadow-md rounded">
       <h2 className="text-2xl font-bold mb-4">Checkout</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleAddAddress}>
         {/* Full Name */}
         <div className="mb-4">
           <label className="block text-sm font-medium text-gray-700" htmlFor="fullName">
@@ -94,22 +100,6 @@ function Checkout() {
             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
           />
           {errors.phoneNumber && <p className="text-red-500 text-xs mt-1">{errors.phoneNumber}</p>}
-        </div>
-
-        {/* Email */}
-        <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700" htmlFor="email">
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-          />
-          {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
         </div>
 
         {/* Location Sub-form */}
@@ -173,23 +163,33 @@ function Checkout() {
           <p><strong>House Number:</strong> {formData.location.houseNo}</p>
         </div>
 
-        {/* Submit Button */}
+        {/* Add Address Button */}
         <button
           type="submit"
           className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
         >
-          Submit
+          Add Address
         </button>
+      </form>
 
-        {/* Proceed to Pay Button */}
-        <Link to="/payment">
+      {/* Proceed to Pay Button */}
+      <Link to="/payment">
         <button
-          type="submit"
-          className="w-full mt-4 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+          disabled={!isAddressAdded}
+          className={`w-full mt-4 text-white py-2 px-4 rounded-md ${
+            isAddressAdded ? 'bg-green-500 hover:bg-green-600 focus:ring-green-500' : 'bg-gray-400 cursor-not-allowed'
+          } focus:outline-none focus:ring-2 focus:ring-offset-2`}
         >
           Proceed to Pay
-        </button></Link>
-      </form>
+        </button>
+      </Link>
+
+      {/* Popup Notification */}
+      {showPopup && (
+        <div className="fixed bottom-4 right-4 bg-green-500 text-white p-3 rounded-md shadow-md transition-opacity duration-300 ease-in-out">
+          Address added successfully!
+        </div>
+      )}
     </div>
   );
 }

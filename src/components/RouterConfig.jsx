@@ -16,7 +16,7 @@ function RouterConfig() {
     <>
     
       <Router>
-      <div className='mb-10'>
+      <div className='lg:mb-16 mb-24 '>
       <Navbar/>
       </div>
         <Routes>
@@ -25,7 +25,7 @@ function RouterConfig() {
           <Route path='/menu' element={<Menu category={category} setcategory={setcategory} />} />
           <Route path ='/contacts' element = {<Contact />}/>
           <Route path='/mobile-app' element={<AppDownload />} />
-          <Route path ="/orders/:id" element={<Order/>}/>
+          <Route path ="/orders" element={<Order/>}/>
           <Route path = "/checkout" element={<Checkout/>}/>
           <Route path ="/payment" element={<Payment/>}/>
         </Routes>

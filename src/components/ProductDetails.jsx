@@ -8,7 +8,7 @@ function ProductDetails() {
   const productId = parseInt(id);
   const product = products.find(item => item.id === productId);
   const { cart, setCart } = useContext(CartContext);
-
+ console.log(cart)
   if (!product) {
     return <div>Product not found!</div>;
   }
@@ -42,7 +42,7 @@ function ProductDetails() {
           </div>
         </div>
         <div className='text-end w-full flex gap-4 justify-end'>
-          <Link className='bg-orange-400 p-3 rounded-xl font-bold shadow-sm shadow-black' to={`/orders/${product.id}`}>View Cart</Link>
+          <Link className='bg-orange-400 p-3 rounded-xl font-bold shadow-sm shadow-black' to={`/orders`}>View Cart</Link>
           <button 
             className='bg-orange-400 p-3 rounded-xl font-bold shadow-sm shadow-black' 
             onClick={() => setCart({

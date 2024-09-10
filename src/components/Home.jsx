@@ -3,6 +3,7 @@ import Header from './Header'
 import Category from './Category'
 import Categoryitems from './CategoryItems' 
 import Contact from './contact'
+import Navbar from './Navbar'
 
 function Home({category, setcategory}) {
  
@@ -10,7 +11,8 @@ function Home({category, setcategory}) {
   <>
   
    <section id='home' className=' p-1'>
-        <div>
+   
+        <div >
           <Header/>
         </div>
         <div className='px-10'>
