@@ -14,7 +14,7 @@ function ProductDetails() {
   }
 
   return (
-    <section className='flex p-5 flex-col items-center mt-0 h-screen justify-center'>
+    <section className='flex p-5 flex-col items-center  justify-center'>
       <div className='flex flex-col justify-center border-2 p-5 items-center'>
         <div className='flex justify-center rounded shadow-lg items-center border-b-2 border-black mb-4 bg-orange-300 w-full px-4 p-1'>
           <h1 className='text-3xl text-center font-bold'>{product.name}</h1>
@@ -41,8 +41,8 @@ function ProductDetails() {
             </ul>
           </div>
         </div>
-        <div className='text-end w-full flex gap-4 justify-end'>
-          <Link className='bg-orange-400 p-3 rounded-xl font-bold shadow-sm shadow-black' to={`/orders`}>View Cart</Link>
+        <div className='text-end w-full mt-5 flex gap-4 justify-end'>
+        
           <button 
             className='bg-orange-400 p-3 rounded-xl font-bold shadow-sm shadow-black' 
             onClick={() => setCart({

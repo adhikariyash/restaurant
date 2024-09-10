@@ -34,7 +34,7 @@ const Navbar = () => {
           <span className="text-xl md:text-2xl font-bold text-orange-400">XRestro</span>
         </Link>
 
-        {/* Desktop Menu */}
+        
         <ul className="hidden md:flex space-x-8 text-lg font-medium">
           <li><Link to="/" className="hover:text-orange-500">Home</Link></li>
           <li><Link to="/menu" className="hover:text-orange-500">Menu</Link></li>
