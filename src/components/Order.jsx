@@ -11,7 +11,6 @@ function Order() {
 
   return (
     <div className="p-5">
-   
       <div className="mb-4">
         <h1 className="text-2xl font-bold">Your Cart</h1>
       </div>
@@ -24,7 +23,6 @@ function Order() {
         </div>
       ) : (
         <>
-       
           <div className="overflow-x-scroll">
             <table className="min-w-full divide-y divide-gray-200">
               <thead className="bg-gray-50">
@@ -62,7 +60,7 @@ function Order() {
                         </button>
                         <span className="px-3">{product.quantity}</span>
                         <button 
-                          onClick={() => updateQuantity(product.id, 1)} 
+                          onClick={() => updateQuantity(product.id, +1)} 
                           className="bg-gray-300 p-1 rounded-r"
                         >
                           +
@@ -84,7 +82,6 @@ function Order() {
             </table>
           </div>
 
-         
           <div className="mt-4 flex justify-between items-center">
             <span className="text-xl font-semibold">Total: ${calculateTotalPrice().toFixed(2)}</span>
             <Link to="/checkout">

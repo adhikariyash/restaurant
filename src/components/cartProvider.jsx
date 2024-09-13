@@ -13,12 +13,12 @@ export const CartProvider = ({ children }) => {
 
   useEffect(() => {
     if (checkoutStatus) {
-      // Clear the cart if checkout status is true
+    
       setCart([]);
-      // Reset checkoutStatus after clearing cart if needed
+   
       setcheckoutStatus(false);
     }
-  }, [checkoutStatus]); // Dependency array includes checkoutStatus
+  }, [checkoutStatus]); 
 
   useEffect(() => {
     console.log('Updated Cart:', cart);
@@ -27,24 +27,33 @@ export const CartProvider = ({ children }) => {
   const addToCart = (product) => {
     setCart(prevCart => {
       const existingProduct = prevCart.find(item => item.id === product.id);
-
+  
       if (existingProduct) {
-        return prevCart;
+        // If product exists, update its quantity
+        return prevCart.map(item =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        ).filter(item => item.quantity > 0); // Remove products with quantity 0
       } else {
+        // If product does not exist, add it to the cart with quantity 1
         return [...prevCart, { ...product, quantity: 1 }];
       }
     });
   };
-
+  
   const updateQuantity = (productId, amount) => {
     setCart(prevCart => {
-      return prevCart.map(item =>
-        item.id === productId
-          ? { ...item, quantity: Math.max(1, item.quantity + amount) }
-          : item
-      );
+      return prevCart
+        .map(item =>
+          item.id === productId
+            ? { ...item, quantity: item.quantity + amount }
+            : item
+        )
+        .filter(item => item.quantity > 0); // Remove products with quantity 0
     });
   };
+  
 
   const handleCheckout = (data) => {
     setCheckoutData(data);
