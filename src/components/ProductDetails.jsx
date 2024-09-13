@@ -33,8 +33,10 @@ function ProductDetails() {
   };
 
   return (
-    <section className='flex p-5 flex-col items-center justify-center'>
-      <div className='flex flex-col justify-center border-2 p-5 items-center'>
+<>
+<section className='p-10' >
+      <div className='flex p-5 flex-col items-center justify-center'>
+      <div className='flex flex-col justify-center rounded-xl border-2 p-5 items-center'>
         <div className='flex justify-center rounded shadow-lg items-center border-b-2 border-black mb-4 bg-orange-300 w-full px-4 p-1'>
           <h1 className='text-3xl text-center font-bold'>{product.name}</h1>
         </div>
@@ -45,15 +47,15 @@ function ProductDetails() {
             className='w-60 h-60 rounded-full shadow-lg mb-6'
           />
         </div>
-        <div className='border-t-4 font-bold flex w-full justify-between px-5'>
+        <div className='border-t-4 mt-5 font-bold flex w-full justify-between px-5'>
           <p className='text-lg mb-4 font-bold'>Category: {product.category}</p>
           <p className='text-lg mb-4'>Price: ${product.price}</p>
         </div>
         <div className='flex flex-col justify-start text-start items-center w-full px-5'>
-          <p className='font-medium'>{product.description}</p> 
-          <div className='text-start w-full mt-2'>
+          <p className='font-medium mt-5'>{product.description}</p> 
+          <div className='text-start w-full mt-7'>
             <p className='font-bold'>Key Ingredients:</p>
-            <ul className='flex sm:gap-6 text-xs gap-4 mt-2 mb-3 w-full items-start justify-start text-start font-bold'>
+            <ul className='flex sm:gap-6 text-sm mt-2 gap-4 mb-3 w-full items-start justify-start text-start font-bold'>
               {product.ingredients.map((ingredient, index) => (
                 <li key={index}>{ingredient}</li>
               ))}
@@ -73,7 +75,9 @@ function ProductDetails() {
           </div>
         </div>
       </div>
+      </div>
     </section>
+</>
   );
 }
 

@@ -10,7 +10,9 @@ function Order() {
   };
 
   return (
-    <div className="p-5">
+   <>
+   <section className='p-10'>
+   <div className="p-5">
       <div className="mb-4">
         <h1 className="text-2xl font-bold">Your Cart</h1>
       </div>
@@ -93,6 +95,8 @@ function Order() {
         </>
       )}
     </div>
+   </section>
+   </>
   );
 }
 

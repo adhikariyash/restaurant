@@ -28,7 +28,10 @@ function RouterConfig() {
           <Route path='/mobile-app' element={<AppDownload />} />
           <Route path ="/orders" element={<Order/>}/>
           <Route path = "/checkout" element={<Checkout/>}/>
-          <Route path ="/payment" element={<Payment/>}/>
+
+       
+        <Route path ="/payment" element={<Payment/>}/>
+        
         </Routes>
            
            <footer>

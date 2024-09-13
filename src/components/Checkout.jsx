@@ -67,7 +67,9 @@ function Checkout() {
   }, [showPopup]);
 
   return (
-    <div className="p-5 max-w-md mx-auto bg-white shadow-md rounded">
+    <>
+    <section className=' flex justify-center items-center p-10'>
+    <div className="p-5 h-full mt-10 max-w-md mx-auto bg-white w-full shadow-md rounded">
       <h2 className="text-2xl font-bold mb-4">Checkout</h2>
       <form onSubmit={handleAddAddress}>
         {/* Full Name */}
@@ -191,6 +193,8 @@ function Checkout() {
         </div>
       )}
     </div>
+    </section>
+    </>
   );
 }
 

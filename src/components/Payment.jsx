@@ -45,7 +45,9 @@ function Payment() {
   };
 
   return (
-    <div className="p-5 max-w-md mx-auto bg-white shadow-md rounded">
+    <>
+    <section className='h-screen justify-center flex items-center'>
+    <div className="p-5  flex-col flex justify-center items-center  max-w-md mx-auto bg-white shadow-md rounded">
       <h1 className="text-2xl font-bold mb-4">Payment</h1>
 
       {/* Address Details */}
@@ -165,6 +167,8 @@ function Payment() {
         </div>
       )}
     </div>
+    </section>
+    </>
   );
 }
 
