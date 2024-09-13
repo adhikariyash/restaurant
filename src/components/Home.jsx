@@ -3,7 +3,6 @@ import Header from './Header'
 import Category from './Category'
 import Categoryitems from './CategoryItems' 
 import Contact from './contact'
-import Navbar from './Navbar'
 
 function Home({category, setcategory}) {
  
@@ -25,7 +24,7 @@ function Home({category, setcategory}) {
         </div>
         <div><Contact /></div>
     
-      
+   
         
          
    </section>

@@ -17,8 +17,8 @@ function Order() {
 
       {/* Check if cart is empty */}
       {cart.length === 0 ? (
-        <div className="text-center py-4">
-          <p className="text-lg font-semibold">Your cart is empty</p>
+        <div className="text-center h-screen flex flex-col items-center justify-center border-4 rounded-xl py-4">
+          <p className="text-xl font-bold">Nothing in Your cart. Cart is empty!!</p>
           <Link to="/" className="text-blue-500 hover:underline">Go back to shopping</Link>
         </div>
       ) : (

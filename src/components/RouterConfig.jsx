@@ -9,6 +9,7 @@ import Contact from './contact';
 import Order from './Order';
 import Checkout from './Checkout';
 import Payment from './Payment';
+import Footer from './Footer';
 
 function RouterConfig() {
   const [category, setcategory] = useState("All") 
@@ -29,7 +30,10 @@ function RouterConfig() {
           <Route path = "/checkout" element={<Checkout/>}/>
           <Route path ="/payment" element={<Payment/>}/>
         </Routes>
-
+           
+           <footer>
+            <Footer />
+           </footer>
        
       </Router>
     </>
