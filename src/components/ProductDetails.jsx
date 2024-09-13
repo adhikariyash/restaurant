@@ -69,7 +69,7 @@ function ProductDetails() {
           >
             Order Now!
           </button>
-          <div className={orderPopup ? "flex border-2 font-bold bg-black text-white p-10 text-xl rounded-xl absolute bottom-28 shadow-lg gap-3 shadow-green-500 flex-col justify-center items-center border-green-500" : "hidden"}>
+          <div className={orderPopup ? "flex border-2 font-bold bg-black text-white p-10 text-xl rounded-xl absolute bottom-28 shadow-lg gap-3  flex-col justify-center items-center border-green-500" : "hidden"}>
             Your order has been placed!
             <Link className='bg-orange-400 p-2  rounded-xl font-bold shadow-sm shadow-black' to="/orders">View Cart</Link>
           </div>

@@ -11,7 +11,7 @@ function Order() {
 
   return (
    <>
-   <section className='p-10'>
+   <section className='p-10 h-screen'>
    <div className="p-5">
       <div className="mb-4">
         <h1 className="text-2xl font-bold">Your Cart</h1>

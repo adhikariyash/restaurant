@@ -33,7 +33,7 @@ function Category({ category, setcategory }) {
         </p>
       </div>
       <div className="title flex flex-row justify-between items-center">
-        <h2 className='font-bold text-xl mb-5'>categories</h2>
+        <h2 className='font-bold text-3xl w-full lg:hidden lg-text-center mb-5'>Categories</h2>
         <div className="block md:hidden">
           <button
             className="px-4 py-2 bg-orange-500 text-white rounded-md shadow-md"
